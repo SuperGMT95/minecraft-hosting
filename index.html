@@ -1,32 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CoreMMC Hosting</title>
 <style>
-body{
-background:#111827;
-color:white;
-font-family:sans-serif;
-text-align:center;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-button{
-background:#22c55e;
-border:none;
-padding:12px 25px;
-font-size:18px;
-color:white;
-border-radius:8px;
+
+/* Body */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #0b0f1a, #050816);
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(5,8,22,0.95);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #6366f1;
+}
+
+/* Combined menu button */
+.menu-btn {
+  display: inline-block;
+  background: #6366f1;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.menu-btn:hover {
+  background: #4f46e5;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 150px 20px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #9ca3af;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.hero .btn {
+  padding: 16px 50px;
+  font-size: 18px;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background: #4f46e5;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-box {
+  background: #111827;
+  padding: 30px 25px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.feature-box h3 {
+  color: #6366f1;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.feature-box p {
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(5,8,22,0.95);
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 </style>
 </head>
-
 <body>
 
-<h1>CoreMMC Minecraft Hosting</h1>
+<header>
+  <div class="logo">CoreMMC</div>
+  <a href="#" class="menu-btn">🏠 Home | 🖥️ Panel | 💬 Support</a>
+</header>
 
-<p>Create your Minecraft server for free</p>
+<section class="hero">
+  <h1>⚡ Premium Minecraft Hosting <br> With Instant Setup ⚡</h1>
+  <p>High-performance servers, 24/7 support, and a powerful control panel for your Minecraft world.</p>
+  <button class="btn">🚀 Get Started</button>
+</section>
 
-<button>Create Server</button>
+<section class="features">
+  <div class="feature-box">
+    <h3>⚡ High Performance</h3>
+    <p>Low-latency servers with powerful CPUs and SSD storage for smooth gameplay.</p>
+  </div>
+  <div class="feature-box">
+    <h3>🖥️ Easy Control</h3>
+    <p>Manage your server easily with a modern, intuitive control panel.</p>
+  </div>
+  <div class="feature-box">
+    <h3>💬 24/7 Support</h3>
+    <p>Our team is available anytime to help you with setup, plugins, and troubleshooting.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 CoreMMC Hosting. All rights reserved.
+</footer>
 
 </body>
 </html>
