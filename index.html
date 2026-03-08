@@ -1,198 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CoreMMC Hosting</title>
-<style>
-/* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-/* Body */
-body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #0b0f1a, #050816);
-  color: #fff;
-  line-height: 1.6;
-}
-
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background: rgba(5,8,22,0.95);
-  position: fixed;  /* header stays on top */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #6366f1;
-}
-
-/* Single stuck menu box */
-.nav-block {
-  background: #6366f1;
-  padding: 12px 25px;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: default;
-  display: inline-block;
-  color: #fff;
-  user-select: none;
-  white-space: nowrap;
-}
-
-.nav-block span {
-  margin: 0 8px;
-}
-
-/* Hero */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 200px 20px 80px 20px; /* padding top for fixed header */
-}
-
-.hero h1 {
-  font-size: 52px;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.hero p {
-  font-size: 20px;
-  color: #9ca3af;
-  max-width: 650px;
-  margin-bottom: 40px;
-}
-
-.hero .btn {
-  padding: 16px 50px;
-  font-size: 18px;
-  background: #6366f1;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.hero .btn:hover { background: #4f46e5; }
-
-/* Features */
-.features {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.feature-box {
-  background: #111827;
-  padding: 30px 25px;
-  border-radius: 12px;
-  width: 300px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.feature-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-}
-
-.feature-box h3 { color: #6366f1; margin-bottom: 15px; font-size: 22px; }
-.feature-box p { color: #9ca3af; font-size: 16px; }
-
-/* Info Section */
-.info {
-  background: #050816;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.info h2 {
-  font-size: 28px;
-  color: #6366f1;
-  margin-bottom: 20px;
-}
-
-.info p {
-  color: #9ca3af;
-  font-size: 18px;
-  max-width: 700px;
-  margin: 10px auto;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 30px 20px;
-  background: rgba(5,8,22,0.95);
-  color: #9ca3af;
-  font-size: 14px;
-}
-
-/* Responsive */
-@media (max-width: 960px) {
-  .features { flex-direction: column; align-items: center; }
-  header { flex-direction: column; gap: 15px; }
-}
-</style>
-</head>
-<body>
-
-<header>
-  <div class="logo">CoreMMC</div>
-  <div class="nav-block">🏠 Home <span>|</span> 🖥️ Panel <span>|</span> 💬 Support</div>
+</a>
+    <nav class="nav-links">
+        <a href="#hero" class="nav-item">Home</a>
+        <a href="#features" class="nav-item">Features</a>
+        <a href="https://discord.gg/rhWqkRuHth" class="nav-item" target="_blank">Support</a>
+        <a href="#" class="nav-item">Panel</a>
+    </nav>
+    <a href="https://discord.gg/rhWqkRuHth" class="btn-header" target="_blank">Get Started</a>
 </header>
 
-<section class="hero">
-  <h1>⚡ Premium Minecraft Hosting <br> With Instant Setup ⚡</h1>
-  <p>High-performance servers, 24/7 support, and a powerful control panel for your Minecraft world. 🚀</p>
-  <button class="btn">🚀 Get Started</button>
+<section id="hero" class="hero">
+    <div class="badge-main">CoreMMC || Premium Performance</div>
+    <h1 class="h-large gradient-text">Next-Gen Hosting<br><span>Built for Your World.</span></h1>
+    <p class="p-main">Experience peak gaming performance with CoreMMC. Low latency, high-speed infrastructure, and 24/7 dedicated support for your community.</p>
+    <div class="cta-group">
+        <a href="https://discord.gg/rhWqkRuHth" class="btn-hero main" target="_blank">
+            <img src="https://img.icons8.com/color/48/discord-new-logo.png" alt="Discord" width="24">
+            Join Support Discord
+        </a>
+        <a href="#features" class="btn-hero outline">View Features</a>
+    </div>
 </section>
 
-<section class="features">
-  <div class="feature-box">
-    <h3>⚡ High Performance</h3>
-    <p>Low-latency servers with powerful CPUs and SSD storage for smooth gameplay. 🎮</p>
-  </div>
-  <div class="feature-box">
-    <h3>🖥️ Easy Control</h3>
-    <p>Manage your server easily with a modern, intuitive control panel. 🛠️</p>
-  </div>
-  <div class="feature-box">
-    <h3>💬 24/7 Support</h3>
-    <p>Our team is available anytime to help you with setup, plugins, and troubleshooting. 🕒</p>
-  </div>
-</section>
-
-<section class="info">
-  <h2>Why Choose CoreMMC? 🌟</h2>
-  <p>✅ Instant server setup — start playing in seconds!</p>
-  <p>✅ Secure and stable servers — uptime guaranteed. 🔒</p>
-  <p>✅ Multiple server locations — low latency worldwide. 🌍</p>
-  <p>✅ Affordable pricing plans for every type of player. 💰</p>
+<section id="features" class="features">
+    <div class="section-title-area">
+        <h2 class="h-large">Core Features.</h2>
+        <p class="p-main">Enterprise-grade hardware designed to give you the smoothest gameplay possible.</p>
+    </div>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="icon-box"><img src="https://img.icons8.com/fluency/48/lightning-bolt.png" width="32"></div>
+            <h3>Peak Performance</h3>
+            <p>High-clock CPUs and fast RAM ensure your server runs without lag or TPS drops.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon-box"><img src="https://img.icons8.com/fluency/48/shield.png" width="32"></div>
+            <h3>Ironclad Security</h3>
+            <p>Advanced DDoS protection keeps your server safe from attacks around the clock.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon-box"><img src="https://img.icons8.com/fluency/48/rocket.png" width="32"></div>
+            <h3>Instant Deploy</h3>
+            <p>Start your journey in seconds. Our automated system sets up your server instantly.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon-box"><img src="https://img.icons8.com/fluency/48/technical-support.png" width="32"></div>
+            <h3>Expert Care</h3>
+            <p>Our team of experts is ready on Discord to solve your technical hurdles instantly.</p>
+        </div>
+    </div>
 </section>
 
 <footer>
-  © 2026 CoreMMC Hosting. All rights reserved.
+    <div class="footer-brand">
+        <a href="#" class="logo">Core<span>MMC</span></a>
+        <p>Premium hosting solutions for developers and gamers worldwide.</p>
+    </div>
+    <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+            <li><a href="#">Minecraft Hosting</a></li>
+            <li><a href="#">VPS Hosting</a></li>
+            <li><a href="#">Bot Hosting</a></li>
+        </ul>
+    </div>
+    <div class="footer-links">
+        <h4>Support</h4>
+        <ul>
+            <li><a href="https://discord.gg/rhWqkRuHth" target="_blank">Discord Support</a></li>
+            <li><a href="#">Knowledgebase</a></li>
+            <li><a href="#">Status Page</a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 CoreMMC Hosting. Built with Passion.</p>
+    </div>
 </footer>
 
 </body>
