@@ -52,11 +52,19 @@
 
         /* --- NAVIGATION --- */
         nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 8%; position: fixed; width: 100%; top: 0;
-            background: rgba(5, 7, 10, 0.6); backdrop-filter: blur(15px);
-            z-index: 1000; border-bottom: var(--border) 1px solid;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(5, 7, 10, 0.6);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: var(--border) 1px solid;
         }
+
         .logo-container { display: flex; align-items: center; gap: 12px; }
         .logo-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary); box-shadow: 0 0 15px var(--glow); }
         .logo-text { font-size: 22px; font-weight: 800; }
@@ -70,15 +78,26 @@
 
         /* MOBILE FLOATING NAV */
         .mobile-nav-bar {
-            display: none; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 450px; background: #6366f1; padding: 15px 25px;
-            border-radius: 25px; z-index: 2000; justify-content: space-between;
-            align-items: center; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 450px;
+            background: #6366f1;
+            padding: 15px 25px;
+            border-radius: 25px;
+            z-index: 2000;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
             border: 1px solid rgba(255,255,255,0.2);
         }
         .mobile-nav-bar a { color: white; text-decoration: none; font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .mobile-nav-bar .divider { color: rgba(255,255,255,0.4); font-size: 20px; }
 
-        /* --- HERO --- */
+        /* --- HERO SECTION --- */
         .hero { padding: 180px 5% 60px; text-align: center; position: relative; }
         .badge { background: rgba(99, 102, 241, 0.1); color: var(--primary); padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid rgba(99, 102, 241, 0.2); display: inline-block; margin-bottom: 25px; }
         .hero h1 { font-size: clamp(40px, 8vw, 65px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
@@ -88,9 +107,15 @@
         .btn-main { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 700; width: 280px; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2); text-align: center; }
         .btn-sec { border: 1px solid var(--border); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 700; width: 280px; background: rgba(255,255,255,0.03); text-align: center; }
 
-        /* --- GIF SECTION --- */
+        /* --- CENTER CONTENT GIF --- */
         .gif-display { text-align: center; padding: 20px 0; }
-        .content-gif { width: 85%; max-width: 500px; border-radius: 20px; filter: drop-shadow(0 0 30px var(--glow)); border: 1px solid var(--border); }
+        .content-gif { 
+            width: 85%; 
+            max-width: 500px; 
+            border-radius: 20px; 
+            filter: drop-shadow(0 0 30px var(--glow)); 
+            border: 1px solid var(--border);
+        }
 
         /* --- FEATURES --- */
         .features { max-width: 1200px; margin: auto; padding: 80px 20px; display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 30px; }
@@ -100,22 +125,37 @@
         .card h2 { font-size: 36px; margin-bottom: 10px; }
         .card h4 { font-weight: 600; margin-bottom: 10px; }
         .card p { opacity:.7; font-size: 14px; }
+        
         .purple{color:#7c6cff;} .blue{color:#00d4ff;} .green{color:#32ff8a;} .orange{color:#ffb347;}
 
-        /* --- INFRASTRUCTURE --- */
+        /* --- GLOBAL INFRASTRUCTURE (Globe Section) --- */
         .infra-section { padding: 80px 5%; text-align: center; }
         .globe-container { margin: 40px auto; max-width: 500px; position: relative; }
         .globe-img { width: 100%; filter: drop-shadow(0 0 50px rgba(99, 102, 241, 0.4)); }
-        .location-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; max-width: 1000px; margin: 40px auto; }
-        .loc-card { background: rgba(13, 17, 23, 0.6); border: 1px solid var(--border); padding: 15px; border-radius: 12px; text-align: center; }
+        
+        .location-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+            gap: 15px; max-width: 1000px; margin: 40px auto; 
+        }
+        .loc-card { 
+            background: rgba(13, 17, 23, 0.6); border: 1px solid var(--border); 
+            padding: 15px; border-radius: 12px; text-align: center;
+        }
         .loc-card h4 { font-size: 14px; margin-bottom: 4px; }
         .loc-card span { font-size: 11px; background: rgba(99, 102, 241, 0.2); color: var(--primary); padding: 2px 8px; border-radius: 10px; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 900px; margin: 40px auto; }
-        .stat-card { background: rgba(13, 17, 23, 0.6); border: 1px solid var(--border); padding: 30px; border-radius: 15px; border-bottom: 3px solid var(--primary); }
+
+        .stats-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; max-width: 900px; margin: 40px auto; 
+        }
+        .stat-card { 
+            background: rgba(13, 17, 23, 0.6); border: 1px solid var(--border); 
+            padding: 30px; border-radius: 15px; border-bottom: 3px solid var(--primary);
+        }
         .stat-card h2 { font-size: 32px; color: var(--text-white); }
         .stat-card p { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); }
 
-        /* --- WHY CHOOSE --- */
+        /* --- WHY CHOOSE SECTION --- */
         .why-us { padding: 80px 5%; text-align: center; }
         .why-us h2 { font-size: 40px; margin-bottom: 10px; font-weight: 800; }
         .why-us h2 span { color: var(--primary); }
@@ -124,18 +164,26 @@
         .why-card { background: rgba(13, 17, 23, 0.6); border: 1px solid var(--border); padding: 30px; border-radius: 15px; text-align: left; transition: 0.3s; }
         .why-card:hover { border-color: var(--primary); transform: translateY(-5px); }
         .why-card .icon-box { font-size: 28px; margin-bottom: 15px; }
+        .why-card h3 { font-size: 20px; margin-bottom: 10px; }
+        .why-card p { font-size: 14px; color: var(--text-dim); }
         .why-card .tag { display: inline-block; margin-top: 15px; padding: 4px 12px; border-radius: 20px; font-size: 11px; background: rgba(99, 102, 241, 0.1); color: var(--primary); border: 1px solid rgba(99, 102, 241, 0.2); }
 
-        /* --- FOOTER & CTA --- */
-        .cta { text-align:center; padding:100px 20px; background: rgba(13, 17, 23, 0.6); border-top: 1px solid var(--border); }
-        footer { padding:60px 8%; background: #060a18; border-top: 1px solid var(--border); }
+        /* --- CTA & FOOTER --- */
+        .cta { text-align:center; padding:100px 20px; background: rgba(13, 17, 23, 0.6); border-top: 1px solid var(--border); font-family: 'Poppins', sans-serif; }
+        .cta h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 20px; }
+        .cta span { color:#4aa3ff; }
+        
+        footer { padding:60px 8%; background: #060a18; border-top: 1px solid var(--border); font-family: 'Poppins', sans-serif; }
         .footer-container { max-width:1200px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; }
+        .footer-title { font-size:22px; font-weight:600; margin-bottom:15px; }
         .links a { display:block; text-decoration:none; color:white; opacity:.7; margin-bottom:8px; font-size:14px; transition: 0.3s; }
         .links a:hover { opacity:1; color: var(--primary); padding-left: 5px; }
 
         @media (max-width: 768px) {
             nav { display: none; }
             .mobile-nav-bar { display: flex; }
+            .hero { padding: 140px 5% 60px; }
+            body { padding-bottom: 100px; }
         }
     </style>
 </head>
@@ -145,7 +193,7 @@
 
 <nav>
     <div class="logo-container">
-        <img src="https://cdn.discordapp.com/attachments/1457594773010518086/1480537990446190726/copilot_image_1761965106943.jpg" alt="Logo" class="logo-img">
+        <img src="https://cdn.discordapp.com/attachments/1457594773010518086/1480537990446190726/copilot_image_1761965106943.jpg?ex=69b009f3&is=69aeb873&hm=aa716bf886560096135e6ef24b1463c49d6b01b08eaaf8bac6ff028c9c8b1360&" alt="Logo" class="logo-img">
         <div class="logo-text">⚡ Core<span>MMC</span></div>
     </div>
     <ul class="nav-links">
@@ -161,9 +209,9 @@
 
 <div class="mobile-nav-bar">
     <a href="#">🏠 Home</a>
-    <div style="color:rgba(255,255,255,0.4);">|</div>
+    <div class="divider">|</div>
     <a href="#">🖥️ Panel</a>
-    <div style="color:rgba(255,255,255,0.4);">|</div>
+    <div class="divider">|</div>
     <a href="#">💬 Support</a>
 </div>
 
@@ -178,7 +226,7 @@
 </section>
 
 <section class="gif-display">
-    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHR2aHcycGhqaHFsNXZvbDh5bm80cGxkajFpbDdsZHptb3Y1dnR5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fWOBg6QWSPyow/giphy.gif" alt="Dynamic Performance" class="content-gif">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExemdvcmxwZG56cW1sZ2w1NGtrNGF0M3E4am1jMG52cnc4M3FuaG1sZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wgHY9nSrlTMt2/giphy.gif" alt="Dynamic Performance" class="content-gif">
 </section>
 
 <section class="features">
@@ -248,12 +296,20 @@
 <section class="why-us">
     <div class="badge">✨ Why We're Different</div>
     <h2>Why Choose <span>CoreMMC?</span></h2>
+    <p class="subtitle">Enterprise-grade infrastructure with unmatched performance and reliability</p>
+
     <div class="why-grid">
         <div class="why-card">
             <div class="icon-box">⚡</div>
             <h3>Ultra-Low Latency</h3>
             <p>Global network with &lt;20ms response time</p>
             <span class="tag">Lightning Fast</span>
+        </div>
+        <div class="why-card">
+            <div class="icon-box">✅</div>
+            <h3>99.99% Uptime</h3>
+            <p>Redundant infrastructure ensures maximum availability</p>
+            <span class="tag">SLA Guaranteed</span>
         </div>
         <div class="why-card">
             <div class="icon-box">🛡️</div>
@@ -268,27 +324,44 @@
             <span class="tag">Auto Setup</span>
         </div>
         <div class="why-card">
+            <div class="icon-box">💾</div>
+            <h3>NVMe SSD</h3>
+            <p>Ultra-fast storage for peak performance</p>
+        </div>
+        <div class="why-card">
             <div class="icon-box">💬</div>
             <h3>24/7 Support</h3>
             <p>Always here to help you</p>
+        </div>
+        <div class="why-card">
+            <div class="icon-box">🌍</div>
+            <h3>Global Network</h3>
+            <p>6+ locations worldwide</p>
+        </div>
+        <div class="why-card">
+            <div class="icon-box">🔄</div>
+            <h3>Auto Backups</h3>
+            <p>Daily snapshots for your data safety</p>
         </div>
     </div>
 </section>
 
 <section class="cta">
     <h1>Ready to Get <span>Started?</span></h1>
-    <p>Join thousands of satisfied customers and experience premium hosting today.</p>
+    <p>Join thousands of satisfied customers and experience premium hosting with CoreMMC today.</p>
 </section>
 
 <footer>
     <div class="footer-container">
         <div class="footer-info">
-            <h3 style="margin-bottom:15px;">⚡ CoreMMC</h3>
-            <p>Enterprise-grade hosting for gamers and developers.</p>
+            <div class="footer-title">⚡ CoreMMC</div>
+            <p>Enterprise-grade hosting for gamers and developers. Fast, reliable, and affordable.</p>
         </div>
         <div class="links">
+            <div class="footer-title">Hosting</div>
             <a href="#">Minecraft Hosting</a>
-            <a href="#">VPS Hosting</a>
+            <a href="#">Intel VPS</a>
+            <a href="#">AMD VPS</a>
             <a href="#">Discord Bot Hosting</a>
             <a href="#">Web Hosting</a>
         </div>
@@ -311,6 +384,8 @@
         snowflake.innerHTML = '❄';
         snowflake.style.left = Math.random() * 100 + 'vw';
         snowflake.style.animationDuration = Math.random() * 3 + 5 + 's'; 
+        snowflake.style.opacity = Math.random() * 0.5;
+        snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
         document.body.appendChild(snowflake);
         setTimeout(() => snowflake.remove(), 6000);
     }
@@ -318,5 +393,4 @@
 </script>
 
 </body>
-    </html>
-
+</html>
