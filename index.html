@@ -27,18 +27,17 @@
             overflow-x: hidden;
         }
 
-        /* --- RESTORED OLD BACKGROUND GIF --- */
+        /* --- BACKGROUND GIF --- */
         .background { 
             position: fixed; 
             inset: -50px; 
             background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczl2aXZ4Mmd1bWQ2cWlmdWV5bWpjbzM5bjZpcnkyMDkweTU5MGw5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v63B5WpbX0a03HAVRV/giphy.gif') center/cover; 
-            filter: blur(6px) brightness(0.35); 
+            filter: blur(8px) brightness(0.35); 
             z-index: -1; 
             transition: transform 0.2s ease-out; 
             pointer-events: none;
         }
 
-        /* --- SNOWFALL EFFECT --- */
         .snowflake {
             position: fixed;
             top: -10px;
@@ -106,28 +105,43 @@
         .hero p { color: var(--text-dim); font-size: 18px; max-width: 600px; margin: 0 auto 40px; }
         .hero-btns { display: flex; flex-direction: column; align-items: center; gap: 15px; }
         .btn-main { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 700; width: 280px; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2); text-align: center; }
-        .btn-sec { border: 1px solid var(--border); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 700; width: 280px; background: rgba(255,255,255,0.03); text-align: center; }
 
-        /* --- CENTER CONTENT GIF --- */
-        .gif-display { text-align: center; padding: 20px 0; }
-        .content-gif { 
-            width: 85%; 
-            max-width: 500px; 
-            border-radius: 20px; 
-            filter: drop-shadow(0 0 30px var(--glow)); 
-            border: 1px solid var(--border);
+        /* --- WHY CHOOSE CoreMMC SECTION (FROM IMAGE) --- */
+        .why-us { padding: 80px 5%; text-align: center; }
+        .why-us h2 { font-size: 40px; margin-bottom: 10px; font-weight: 800; }
+        .why-us h2 span { color: var(--primary); }
+        .why-us p.subtitle { color: var(--text-dim); margin-bottom: 50px; }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
         }
 
-        /* --- FEATURES --- */
-        .features { max-width: 1200px; margin: auto; padding: 80px 20px; display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 30px; }
-        .card { padding: 40px; border-radius: 18px; background: rgba(13, 17, 23, 0.7); backdrop-filter: blur(10px); border: 1px solid var(--border); transition:.3s; font-family: 'Poppins', sans-serif; }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 10px 40px rgba(0,0,0,0.5); border-color: var(--primary); }
-        .icon { font-size: 32px; margin-bottom: 20px; }
-        .card h2 { font-size: 36px; margin-bottom: 10px; }
-        .card h4 { font-weight: 600; margin-bottom: 10px; }
-        .card p { opacity:.7; font-size: 14px; }
-        
-        .purple{color:#7c6cff;} .blue{color:#00d4ff;} .green{color:#32ff8a;} .orange{color:#ffb347;}
+        .why-card {
+            background: rgba(13, 17, 23, 0.6);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: left;
+            transition: 0.3s;
+        }
+        .why-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .why-card .icon-box { font-size: 28px; margin-bottom: 15px; }
+        .why-card h3 { font-size: 20px; margin-bottom: 10px; }
+        .why-card p { font-size: 14px; color: var(--text-dim); }
+        .why-card .tag { 
+            display: inline-block; 
+            margin-top: 15px; 
+            padding: 4px 12px; 
+            border-radius: 20px; 
+            font-size: 11px; 
+            background: rgba(99, 102, 241, 0.1); 
+            color: var(--primary);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
 
         /* --- CTA & FOOTER --- */
         .cta { text-align:center; padding:100px 20px; background: rgba(13, 17, 23, 0.6); border-top: 1px solid var(--border); font-family: 'Poppins', sans-serif; }
@@ -180,66 +194,87 @@
     <div class="badge">🚀 CoreMMC || India's Fastest Hosting</div>
     <h1>Premium Hosting <br> <span class="performance-text">Built for Performance</span></h1>
     <p>VPS • Game • Bot • Web Hosting <br> Smooth Performance • Zero Lag • Pure Stability</p>
-    
     <div class="hero-btns">
         <a href="#plans" class="btn-main">View Plans →</a>
-        <a href="#" class="btn-sec">Contact Support</a>
     </div>
 </section>
 
-<section class="gif-display">
-    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHR2aHcycGhqaHFsNXZvbDh5bm80cGxkajFpbDdsZHptb3Y1dnR5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fWOBg6QWSPyow/giphy.gif" alt="Performance GIF" class="content-gif">
-</section>
+<section class="why-us">
+    <div class="badge">✨ Why We're Different</div>
+    <h2>Why Choose <span>CoreMMC?</span></h2>
+    <p class="subtitle">Enterprise-grade infrastructure with unmatched performance and reliability</p>
 
-<section class="features">
-    <div class="card">
-        <div class="icon">⚡</div>
-        <h2 class="purple">99.99%</h2>
-        <h4>Uptime SLA</h4>
-        <p>Redundant failovers ensure maximum availability</p>
-    </div>
-    <div class="card">
-        <div class="icon">💬</div>
-        <h2 class="blue">24/7</h2>
-        <h4>Expert Support</h4>
-        <p>Response time under 5 minutes on Discord</p>
-    </div>
-    <div class="card">
-        <div class="icon">🛡️</div>
-        <h2 class="green">Tbps+</h2>
-        <h4>DDoS Shield</h4>
-        <p>Enterprise-grade protection against all attacks</p>
-    </div>
-    <div class="card">
-        <div class="icon">🚀</div>
-        <h2 class="orange">&lt;20ms</h2>
-        <h4>Low Latency</h4>
-        <p>NVMe SSDs & premium network</p>
+    <div class="why-grid">
+        <div class="why-card">
+            <div class="icon-box">⚡</div>
+            <h3>Ultra-Low Latency</h3>
+            <p>Global network with &lt;20ms response time</p>
+            <span class="tag">Lightning Fast</span>
+        </div>
+        <div class="why-card">
+            <div class="icon-box">✅</div>
+            <h3>99.99% Uptime</h3>
+            <p>Redundant infrastructure ensures maximum availability</p>
+            <span class="tag">SLA Guaranteed</span>
+        </div>
+        <div class="why-card">
+            <div class="icon-box">🛡️</div>
+            <h3>DDoS Protection</h3>
+            <p>Military-grade protection against all attack types</p>
+            <span class="tag">Enterprise Grade</span>
+        </div>
+        <div class="why-card">
+            <div class="icon-box">🚀</div>
+            <h3>Instant Deploy</h3>
+            <p>One-click setup, your server live in 30 seconds</p>
+            <span class="tag">Auto Setup</span>
+        </div>
+        <div class="why-card">
+            <div class="icon-box">💾</div>
+            <h3>NVMe SSD</h3>
+            <p>Ultra-fast storage for peak performance</p>
+        </div>
+        <div class="why-card">
+            <div class="icon-box">💬</div>
+            <h3>24/7 Support</h3>
+            <p>Always here to help you</p>
+        </div>
+        <div class="why-card">
+            <div class="icon-box">🌍</div>
+            <h3>Global Network</h3>
+            <p>6+ locations worldwide</p>
+        </div>
+        <div class="why-card">
+            <div class="icon-box">🔄</div>
+            <h3>Auto Backups</h3>
+            <p>Daily snapshots for your data safety</p>
+        </div>
     </div>
 </section>
 
 <section class="cta">
     <h1>Ready to Get <span>Started?</span></h1>
-    <p>Join thousands of satisfied customers and experience premium hosting today.</p>
+    <p>Join thousands of satisfied customers and experience premium hosting with CoreMMC today.</p>
 </section>
 
 <footer>
     <div class="footer-container">
         <div class="footer-info">
             <div class="footer-title">⚡ CoreMMC</div>
-            <p>Fast, reliable, and affordable hosting solutions.</p>
+            <p>Enterprise-grade hosting for gamers and developers. Fast, reliable, and affordable.</p>
         </div>
         <div class="links">
             <div class="footer-title">Hosting</div>
             <a href="#">Minecraft Hosting</a>
-            <a href="#">VPS Hosting</a>
-            <a href="#">Bot Hosting</a>
+            <a href="#">Intel VPS</a>
+            <a href="#">AMD VPS</a>
+            <a href="#">Discord Bot Hosting</a>
+            <a href="#">Web Hosting</a>
         </div>
     </div>
 </footer>
 
 <script>
-    // Desktop Parallax
     const bg = document.getElementById('parallax-bg');
     if (window.innerWidth > 768) {
         document.addEventListener('mousemove', (e) => {
@@ -249,7 +284,6 @@
         });
     }
 
-    // Snowfall logic
     function createSnowflake() {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
@@ -266,4 +300,3 @@
 
 </body>
 </html>
-
