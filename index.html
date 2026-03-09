@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoreMMC | Premium Hosting Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #05070a;
@@ -25,38 +25,33 @@
             color: var(--text-white);
             line-height: 1.6;
             overflow-x: hidden;
-            padding-bottom: 100px;
         }
 
-        /* --- Updated GIF Background --- */
+        /* --- BACKGROUND & SNOW --- */
         .background { 
             position: fixed; 
             inset: -50px; 
-            /* GIF background setup */
-            background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczl2aXZ4Mmd1bWQ2cWlmdWV5bWpjbzM5bjZpcnkyMDkweTU5MGw5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v63B5WpbX0a03HAVRV/giphy.gif') center/cover no-repeat; 
-            filter: blur(4px) brightness(0.35); /* Text readability ke liye brightness thoda kam kiya hai */
+            background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczl2aXZ4Mmd1bWQ2cWlmdWV5bWpjbzM5bjZpcnkyMDkweTU5MGw5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v63B5WpbX0a03HAVRV/giphy.gif') center/cover; 
+            filter: blur(8px) brightness(0.4); 
             z-index: -1; 
             transition: transform 0.2s ease-out; 
             pointer-events: none;
         }
 
-        /* --- Snowfall Effect --- */
         .snowflake {
             position: fixed;
             top: -10px;
             z-index: 9999;
             color: #fff;
-            opacity: 0.6;
+            opacity: 0.8;
             user-select: none;
             pointer-events: none;
             animation: fall linear infinite;
         }
 
-        @keyframes fall {
-            to { transform: translateY(110vh); }
-        }
+        @keyframes fall { to { transform: translateY(110vh); } }
 
-        /* Navbar */
+        /* --- NAVIGATION --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -71,33 +66,18 @@
             border-bottom: var(--border) 1px solid;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .logo-img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary);
-            box-shadow: 0 0 15px var(--glow);
-        }
-
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary); box-shadow: 0 0 15px var(--glow); }
         .logo-text { font-size: 22px; font-weight: 800; }
         .logo-text span { color: var(--primary); }
-        
         .nav-links { display: flex; gap: 25px; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 14px; font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--text-white); }
-
         .nav-btns { display: flex; gap: 15px; }
         .btn-panel { background: transparent; border: 1px solid var(--border); color: white; padding: 8px 18px; border-radius: 8px; cursor: pointer; }
         .btn-get { background: var(--primary); border: none; color: white; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; }
 
-        /* Mobile Floating Nav bar */
+        /* MOBILE NAV */
         .mobile-nav-bar {
             display: none;
             position: fixed;
@@ -115,67 +95,51 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.6);
             border: 1px solid rgba(255,255,255,0.2);
         }
+        .mobile-nav-bar a { color: white; text-decoration: none; font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .mobile-nav-bar .divider { color: rgba(255,255,255,0.4); font-size: 20px; }
 
-        .mobile-nav-bar a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .mobile-nav-bar .divider {
-            color: rgba(255,255,255,0.4);
-            font-size: 18px;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 180px 5% 100px;
-            text-align: center;
-            position: relative;
-        }
-
-        .badge {
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--primary);
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            display: inline-block;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 {
-            font-size: clamp(32px, 8vw, 65px);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 .performance-text {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-        }
-
-        .hero p { color: var(--text-dim); font-size: 16px; max-width: 600px; margin: 0 auto 40px; }
-
+        /* --- HERO SECTION --- */
+        .hero { padding: 180px 5% 100px; text-align: center; position: relative; }
+        .badge { background: rgba(99, 102, 241, 0.1); color: var(--primary); padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid rgba(99, 102, 241, 0.2); display: inline-block; margin-bottom: 25px; }
+        .hero h1 { font-size: clamp(40px, 8vw, 65px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 .performance-text { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block; }
+        .hero p { color: var(--text-dim); font-size: 18px; max-width: 600px; margin: 0 auto 40px; }
         .hero-btns { display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .btn-main { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 700; width: 280px; text-align: center; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2); }
-        .btn-sec { border: 1px solid var(--border); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 700; width: 280px; text-align: center; background: rgba(255,255,255,0.03); }
+        .btn-main { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 700; width: 280px; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2); text-align: center; }
+        .btn-sec { border: 1px solid var(--border); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 700; width: 280px; background: rgba(255,255,255,0.03); text-align: center; }
+
+        /* --- FEATURES (MERGED) --- */
+        .features { max-width: 1200px; margin: auto; padding: 80px 20px; display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 30px; }
+        .card { padding: 40px; border-radius: 18px; background: rgba(13, 17, 23, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); transition:.3s; font-family: 'Poppins', sans-serif; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 10px 40px rgba(0,0,0,0.5); border-color: var(--primary); }
+        .icon { font-size: 32px; margin-bottom: 20px; }
+        .card h2 { font-size: 36px; margin-bottom: 10px; }
+        .card h4 { font-weight: 600; margin-bottom: 10px; }
+        .card p { opacity:.7; font-size: 14px; }
+        
+        .purple{color:#7c6cff;} .blue{color:#00d4ff;} .green{color:#32ff8a;} .orange{color:#ffb347;}
+
+        /* --- CTA SECTION (MERGED) --- */
+        .cta { text-align:center; padding:100px 20px; background: rgba(13, 17, 23, 0.6); border-top: 1px solid var(--border); font-family: 'Poppins', sans-serif; }
+        .cta h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 20px; }
+        .cta span { color:#4aa3ff; }
+        .cta p { opacity:.7; max-width:600px; margin:auto; }
+
+        /* --- FOOTER (MERGED) --- */
+        footer { padding:60px 8%; background: #060a18; border-top: 1px solid var(--border); font-family: 'Poppins', sans-serif; }
+        .footer-container { max-width:1200px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; }
+        .footer-title { font-size:22px; font-weight:600; margin-bottom:15px; }
+        .footer p { opacity:.7; font-size:14px; margin-bottom:15px; }
+        .socials span { font-size:20px; margin-right:12px; cursor:pointer; }
+        .links a { display:block; text-decoration:none; color:white; opacity:.7; margin-bottom:8px; font-size:14px; transition: 0.3s; }
+        .links a:hover { opacity:1; color: var(--primary); padding-left: 5px; }
 
         @media (max-width: 768px) {
             nav { display: none; }
             .mobile-nav-bar { display: flex; }
             .hero { padding: 140px 5% 80px; }
-            .hero h1 { font-size: 36px; }
-            .background { filter: blur(2px) brightness(0.4); } /* Mobile par performance ke liye blur kam */
+            .hero h1 { font-size: 42px; }
+            body { padding-bottom: 100px; }
         }
     </style>
 </head>
@@ -185,7 +149,7 @@
 
 <nav>
     <div class="logo-container">
-        <img src="https://cdn.discordapp.com/attachments/1457594773010518086/1480537990446190726/copilot_image_1761965106943.jpg?ex=69b009f3&is=69aeb873&hm=aa716bf886560096135e6ef24b1463c49d6b01b08eaaf8bac6ff028c9c8b1360&" alt="CoreMMC Logo" class="logo-img">
+        <img src="https://cdn.discordapp.com/attachments/1457594773010518086/1480537990446190726/copilot_image_1761965106943.jpg?ex=69b009f3&is=69aeb873&hm=aa716bf886560096135e6ef24b1463c49d6b01b08eaaf8bac6ff028c9c8b1360&" alt="Logo" class="logo-img">
         <div class="logo-text">⚡ Core<span>MMC</span></div>
     </div>
     <ul class="nav-links">
@@ -219,41 +183,90 @@
 </section>
 
 <section style="text-align: center; padding: 20px 0;">
-    <img src="https://i.imgur.com/86zD8Ym.png" alt="Global Network" style="width: 80%; max-width: 400px; filter: drop-shadow(0 0 30px var(--glow));">
+    <img src="https://i.imgur.com/86zD8Ym.png" alt="Globe" style="width: 80%; max-width: 400px; filter: drop-shadow(0 0 30px var(--glow));">
 </section>
 
+<section class="features">
+    <div class="card">
+        <div class="icon">⚡</div>
+        <h2 class="purple">99.99%</h2>
+        <h4>Uptime SLA</h4>
+        <p>Redundant failovers ensure maximum availability</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">💬</div>
+        <h2 class="blue">24/7</h2>
+        <h4>Expert Support</h4>
+        <p>Response time under 5 minutes on Discord</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">🛡️</div>
+        <h2 class="green">Tbps+</h2>
+        <h4>DDoS Shield</h4>
+        <p>Enterprise-grade protection against all attacks</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">🚀</div>
+        <h2 class="orange">&lt;20ms</h2>
+        <h4>Low Latency</h4>
+        <p>NVMe SSDs & premium network</p>
+    </div>
+</section>
+
+<section class="cta">
+    <h1>Ready to Get <span>Started?</span></h1>
+    <p>Join thousands of satisfied customers and experience premium hosting with CoreMMC today.</p>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer">
+            <div class="footer-title">⚡ CoreMMC</div>
+            <p>Enterprise-grade hosting for gamers and developers. Fast, reliable, and affordable.</p>
+            <div class="socials">
+                <span>💬</span>
+                <span>📸</span>
+                <span>💻</span>
+            </div>
+        </div>
+
+        <div class="links">
+            <div class="footer-title">Hosting</div>
+            <a href="#">Minecraft Hosting</a>
+            <a href="#">Intel VPS</a>
+            <a href="#">AMD VPS</a>
+            <a href="#">Discord Bot Hosting</a>
+            <a href="#">Web Hosting</a>
+        </div>
+    </div>
+</footer>
+
 <script>
-    // Desktop Parallax Effect
     const bg = document.getElementById('parallax-bg');
     if (window.innerWidth > 768) {
         document.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth / 2 - e.pageX) / 45;
-            const y = (window.innerHeight / 2 - e.pageY) / 45;
+            const x = (window.innerWidth / 2 - e.pageX) / 40;
+            const y = (window.innerHeight / 2 - e.pageY) / 40;
             bg.style.transform = `translate(${x}px, ${y}px)`;
         });
     }
 
-    // Snowfall Effect logic
     function createSnowflake() {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
         snowflake.innerHTML = '❄';
         snowflake.style.left = Math.random() * 100 + 'vw';
-        snowflake.style.animationDuration = Math.random() * 3 + 5 + 's'; 
-        snowflake.style.opacity = Math.random() * 0.4;
-        snowflake.style.fontSize = Math.random() * 8 + 8 + 'px';
+        snowflake.style.animationDuration = Math.random() * 3 + 4 + 's'; 
+        snowflake.style.opacity = Math.random() * 0.5;
+        snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
         document.body.appendChild(snowflake);
-        
-        setTimeout(() => {
-            snowflake.remove();
-        }, 7000);
+        setTimeout(() => snowflake.remove(), 6000);
     }
-    
-    // Performance friendly snowflake generation
-    const interval = window.innerWidth > 768 ? 200 : 400;
-    setInterval(createSnowflake, interval);
+    setInterval(createSnowflake, 200);
 </script>
 
 </body>
 </html>
-
