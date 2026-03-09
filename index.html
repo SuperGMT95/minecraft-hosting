@@ -128,6 +128,33 @@
         
         .purple{color:#7c6cff;} .blue{color:#00d4ff;} .green{color:#32ff8a;} .orange{color:#ffb347;}
 
+        /* --- GLOBAL INFRASTRUCTURE (Globe Section) --- */
+        .infra-section { padding: 80px 5%; text-align: center; }
+        .globe-container { margin: 40px auto; max-width: 500px; position: relative; }
+        .globe-img { width: 100%; filter: drop-shadow(0 0 50px rgba(99, 102, 241, 0.4)); }
+        
+        .location-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+            gap: 15px; max-width: 1000px; margin: 40px auto; 
+        }
+        .loc-card { 
+            background: rgba(13, 17, 23, 0.6); border: 1px solid var(--border); 
+            padding: 15px; border-radius: 12px; text-align: center;
+        }
+        .loc-card h4 { font-size: 14px; margin-bottom: 4px; }
+        .loc-card span { font-size: 11px; background: rgba(99, 102, 241, 0.2); color: var(--primary); padding: 2px 8px; border-radius: 10px; }
+
+        .stats-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; max-width: 900px; margin: 40px auto; 
+        }
+        .stat-card { 
+            background: rgba(13, 17, 23, 0.6); border: 1px solid var(--border); 
+            padding: 30px; border-radius: 15px; border-bottom: 3px solid var(--primary);
+        }
+        .stat-card h2 { font-size: 32px; color: var(--text-white); }
+        .stat-card p { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); }
+
         /* --- WHY CHOOSE SECTION --- */
         .why-us { padding: 80px 5%; text-align: center; }
         .why-us h2 { font-size: 40px; margin-bottom: 10px; font-weight: 800; }
@@ -226,6 +253,43 @@
         <h2 class="orange">&lt;20ms</h2>
         <h4>Low Latency</h4>
         <p>NVMe SSDs & premium network</p>
+    </div>
+</section>
+
+<section class="infra-section">
+    <div class="badge">🌍 Global Server Network</div>
+    <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 10px;">Our Global <span>Infrastructure</span></h2>
+    <p style="color: var(--text-dim);">Explore our worldwide server network with ultra-low latency</p>
+
+    <div class="globe-container">
+        <img src="https://i.imgur.com/8vW9H7R.png" alt="Global Globe" class="globe-img"> 
+    </div>
+
+    <div class="location-grid">
+        <div class="loc-card"><h4>🇮🇳 Mumbai</h4><span>5-20 ms</span></div>
+        <div class="loc-card"><h4>🇮🇳 Delhi</h4><span>10-25 ms</span></div>
+        <div class="loc-card"><h4>🇸🇬 Singapore</h4><span>35-55 ms</span></div>
+        <div class="loc-card"><h4>🇦🇪 Dubai</h4><span>40-70 ms</span></div>
+        <div class="loc-card"><h4>🇩🇪 Frankfurt</h4><span>120-160 ms</span></div>
+        <div class="loc-card"><h4>🇺🇸 Washington</h4><span>180-220 ms</span></div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div style="font-size: 24px; margin-bottom: 10px;">🌍</div>
+            <h2>8</h2>
+            <p>Data Centers</p>
+        </div>
+        <div class="stat-card">
+            <div style="font-size: 24px; margin-bottom: 10px;">⚡</div>
+            <h2>&lt;50ms</h2>
+            <p>Avg Latency</p>
+        </div>
+        <div class="stat-card">
+            <div style="font-size: 24px; margin-bottom: 10px;">✅</div>
+            <h2>99.99%</h2>
+            <p>Uptime SLA</p>
+        </div>
     </div>
 </section>
 
