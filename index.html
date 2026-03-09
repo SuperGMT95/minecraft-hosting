@@ -1,200 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CoreMMC Node</title>
-<style>
-/* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreMMC | Premium Hosting Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #05070a;
+            --card-bg: #0d1117;
+            --primary: #6366f1;
+            --secondary: #0ea5e9;
+            --text-white: #ffffff;
+            --text-dim: #9ca3af;
+            --border: rgba(255, 255, 255, 0.05);
+            --glow: rgba(99, 102, 241, 0.15);
+        }
 
-/* Body */
-body {
-  font-family: 'Arial', sans-serif;
-  color: #fff;
-  line-height: 1.6;
-  overflow-x: hidden;
-  background: #050816; /* Fallback color */
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 80px; /* Space for mobile nav */
+        }
 
-/* --- New Animated Background --- */
-.background { 
-  position: fixed; 
-  inset: -20px; /* Slightly larger to allow for movement without showing edges */
-  background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczl2aXZ4Mmd1bWQ2cWlmdWV5bWpjbzM5bjZpcnkyMDkweTU5MGw5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v63B5WpbX0a03HAVRV/giphy.gif') center/cover; 
-  filter: blur(8px) brightness(0.5); 
-  z-index: -1; 
-  transition: transform 0.2s ease-out; 
-}
+        /* --- New Animated Background --- */
+        .background { 
+            position: fixed; 
+            inset: -50px; 
+            background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczl2aXZ4Mmd1bWQ2cWlmdWV5bWpjbzM5bjZpcnkyMDkweTU5MGw5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v63B5WpbX0a03HAVRV/giphy.gif') center/cover; 
+            filter: blur(8px) brightness(0.4); 
+            z-index: -1; 
+            transition: transform 0.2s ease-out; 
+            pointer-events: none;
+        }
 
-/* Snowfall Effect */
-.snowflake {
-  position: fixed;
-  top: -10px;
-  z-index: 10;
-  font-size: 1.5em;
-  color: #fff;
-  opacity: 0.8;
-  user-select: none;
-  pointer-events: none;
-  animation: fall linear infinite;
-}
+        /* --- Snowfall Effect --- */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 9999;
+            color: #fff;
+            opacity: 0.8;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
 
-@keyframes fall {
-  0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(110vh) rotate(360deg); }
-}
+        @keyframes fall {
+            to { transform: translateY(110vh); }
+        }
 
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background: rgba(5, 8, 22, 0.8);
-  backdrop-filter: blur(10px); /* Makes header look modern over the gif */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
+        /* Desktop Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(5, 7, 10, 0.6);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: var(--border) 1px solid;
+        }
 
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #6366f1;
-}
+        .logo { font-size: 22px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--primary); }
+        
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 14px; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--text-white); }
 
-.nav-block {
-  background: #6366f1;
-  padding: 12px 25px;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 16px;
-  color: #fff;
-}
+        .nav-btns { display: flex; gap: 15px; }
+        .btn-panel { background: transparent; border: 1px solid var(--border); color: white; padding: 8px 18px; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .btn-panel:hover { background: rgba(255,255,255,0.05); }
+        .btn-get { background: var(--primary); border: none; color: white; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); }
 
-/* Sections */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 200px 20px 80px 20px;
-}
+        /* --- Mobile Bottom Nav (Photo Style) --- */
+        .mobile-nav {
+            display: none; /* Desktop pe hidden */
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            background: #6366f1; /* Image wala color */
+            padding: 12px 20px;
+            border-radius: 20px;
+            z-index: 2000;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
 
-.hero h1 { font-size: 52px; margin-bottom: 20px; }
-.hero p { font-size: 20px; color: #d1d5db; max-width: 650px; margin-bottom: 40px; }
+        .mobile-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-.hero .btn {
-  padding: 16px 50px;
-  font-size: 18px;
-  background: #6366f1;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
-}
+        .mobile-nav .separator {
+            color: rgba(255,255,255,0.5);
+            font-weight: 400;
+        }
 
-.hero .btn:hover { background: #4f46e5; transform: scale(1.05); }
+        /* Sections */
+        .hero { padding: 180px 5% 100px; text-align: center; position: relative; }
+        .badge { background: rgba(99, 102, 241, 0.1); color: var(--primary); padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid rgba(99, 102, 241, 0.2); display: inline-block; margin-bottom: 25px; }
+        .hero h1 { font-size: clamp(35px, 8vw, 65px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { color: var(--text-dim); font-size: 16px; max-width: 600px; margin: 0 auto 40px; }
+        .hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        
+        .btn-main { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; padding: 15px 35px; border-radius: 10px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2); }
+        .btn-sec { border: 1px solid var(--border); color: white; padding: 15px 35px; border-radius: 10px; text-decoration: none; font-weight: 700; background: rgba(255,255,255,0.02); }
 
-.features {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 50px; }
+        .price-card { background: rgba(13, 17, 23, 0.7); backdrop-filter: blur(10px); border: 1px solid var(--border); padding: 40px 30px; border-radius: 20px; text-align: left; transition: 0.3s; }
+        .price-card:hover { transform: translateY(-10px); border-color: var(--primary); background: rgba(13, 17, 23, 0.9); }
 
-.feature-box {
-  background: rgba(17, 24, 39, 0.8);
-  backdrop-filter: blur(5px);
-  padding: 30px 25px;
-  border-radius: 12px;
-  width: 300px;
-  text-align: center;
-  transition: 0.3s;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.feature-box:hover { transform: translateY(-10px); background: rgba(17, 24, 39, 0.9); }
-
-.info { padding: 60px 20px; text-align: center; background: rgba(5, 8, 22, 0.6); }
-
-footer { text-align: center; padding: 30px; background: rgba(5, 8, 22, 0.9); color: #9ca3af; }
-
-@media (max-width: 960px) {
-  header { flex-direction: column; gap: 15px; padding: 20px; }
-  .hero h1 { font-size: 32px; }
-}
-</style>
+        /* Responsive Settings */
+        @media (max-width: 768px) {
+            nav { display: none; } /* Mobile pe purana nav hide */
+            .mobile-nav { display: flex; } /* Photo wala nav show */
+            .hero { padding: 120px 5% 60px; }
+            .hero h1 { font-size: 38px; }
+            .infra { padding: 60px 5%; }
+            .globe-img { margin: 20px auto; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="background" id="bg"></div>
+<div class="background" id="parallax-bg"></div>
 
-<header>
-  <div class="logo">CoreMMC</div>
-  <div class="nav-block">🏠 Home <span>|</span> 🖥️ Panel <span>|</span> 💬 Support</div>
-</header>
+<nav>
+    <div class="logo">⚡ Core<span>MMC</span></div>
+    <ul class="nav-links">
+        <li><a href="#">Features</a></li>
+        <li><a href="#plans">Hosting</a></li>
+        <li><a href="#">Status</a></li>
+    </ul>
+    <div class="nav-btns">
+        <button class="btn-panel">Panels</button>
+        <button class="btn-get">Get Started</button>
+    </div>
+</nav>
+
+<div class="mobile-nav">
+    <a href="#">🏠 Home</a>
+    <span class="separator">|</span>
+    <a href="#">🖥️ Panel</a>
+    <span class="separator">|</span>
+    <a href="https://discord.gg/rhWqkRuHth">💬 Support</a>
+</div>
 
 <section class="hero">
-  <h1>⚡ Premium Minecraft Hosting <br> With Instant Setup ⚡</h1>
-  <p>High-performance servers, 24/7 support, and a powerful control panel. 🚀</p>
-  <button class="btn">🚀 Get Started</button>
+    <div class="badge">🚀 CoreMMC || India's Fastest Hosting</div>
+    <h1>Premium Hosting <br> <span>Built for Performance</span></h1>
+    <p>VPS • Game • Bot • Web Hosting <br> Smooth Performance • Zero Lag • Pure Stability</p>
+    <div class="hero-btns">
+        <a href="#plans" class="btn-main">View Plans →</a>
+        <a href="https://discord.gg/rhWqkRuHth" class="btn-sec">Contact Support</a>
+    </div>
 </section>
 
-<section class="features">
-  <div class="feature-box">
-    <h3>⚡ High Performance</h3>
-    <p>Low-latency servers with powerful CPUs for smooth gameplay. 🎮</p>
-  </div>
-  <div class="feature-box">
-    <h3>🖥️ Easy Control</h3>
-    <p>Manage your server easily with an intuitive control panel. 🛠️</p>
-  </div>
-  <div class="feature-box">
-    <h3>💬 24/7 Support</h3>
-    <p>Our team is available anytime to help you with troubleshooting. 🕒</p>
-  </div>
+<section class="infra" style="text-align: center; padding: 80px 8%;">
+    <div class="badge">🌏 Global Infrastructure</div>
+    <h2>Worldwide <span>Presence</span></h2>
+    <img src="https://i.imgur.com/86zD8Ym.png" alt="Globe" class="globe-img" style="width: 100%; max-width: 500px; filter: drop-shadow(0 0 50px var(--glow));">
 </section>
 
-<section class="info">
-  <h2>Why Choose CoreMMC? 🌟</h2>
-  <p>✅ Instant server setup | ✅ Secure and stable | ✅ Low latency worldwide</p>
+<section class="pricing" id="plans" style="padding: 100px 8%; text-align: center;">
+    <div class="badge">🚀 Our Services</div>
+    <h2>Choose Your <span>Perfect Plan</span></h2>
+    <div class="price-grid">
+        <div class="price-card">
+            <h3>VPS Hosting</h3>
+            <p>Intel Xeon • Root Access</p>
+            <div style="font-size: 32px; font-weight: 800; margin: 20px 0;">₹100 <span style="font-size: 16px; color: var(--text-dim);">/GB</span></div>
+            <ul style="list-style: none; text-align: left; color: var(--text-dim);">
+                <li>✓ NVMe Storage</li>
+                <li>✓ DDoS Protection</li>
+            </ul>
+        </div>
+        <div class="price-card" style="border: 2px solid var(--primary);">
+            <div style="background: var(--primary); font-size: 10px; padding: 4px 10px; border-radius: 10px; display: inline-block; margin-bottom: 10px;">POPULAR</div>
+            <h3>Minecraft</h3>
+            <p>Extreme Performance</p>
+            <div style="font-size: 32px; font-weight: 800; margin: 20px 0;">₹25 <span style="font-size: 16px; color: var(--text-dim);">/GB</span></div>
+            <ul style="list-style: none; text-align: left; color: var(--text-dim);">
+                <li>✓ 99.9% Uptime</li>
+                <li>✓ Free Backups</li>
+            </ul>
+        </div>
+        <div class="price-card">
+            <h3>Bot Hosting</h3>
+            <p>24/7 Node/Python</p>
+            <div style="font-size: 32px; font-weight: 800; margin: 20px 0;">₹20 <span style="font-size: 16px; color: var(--text-dim);">/GB</span></div>
+            <ul style="list-style: none; text-align: left; color: var(--text-dim);">
+                <li>✓ Instant Setup</li>
+                <li>✓ Full Console</li>
+            </ul>
+        </div>
+    </div>
 </section>
-
-<footer>© 2026 CoreMMC Hosting. All rights reserved.</footer>
 
 <script>
-  // Snowfall Logic
-  function createSnowflake() {
-    const snowflake = document.createElement('div');
-    snowflake.classList.add('snowflake');
-    snowflake.innerHTML = '❄'; 
-    snowflake.style.left = Math.random() * 100 + 'vw';
-    snowflake.style.animationDuration = Math.random() * 3 + 7 + 's'; 
-    snowflake.style.opacity = Math.random();
-    snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-    document.body.appendChild(snowflake);
-    setTimeout(() => { snowflake.remove(); }, 10000);
-  }
-  setInterval(createSnowflake, 200);
+    // Parallax only for Desktop
+    const bg = document.getElementById('parallax-bg');
+    if (window.innerWidth > 768) {
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.pageX) / 35;
+            const y = (window.innerHeight / 2 - e.pageY) / 35;
+            bg.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    }
 
-  // Background Parallax Movement
-  const bg = document.getElementById('bg');
-  document.addEventListener('mousemove', (e) => {
-    const x = (window.innerWidth / 2 - e.pageX) / 50;
-    const y = (window.innerHeight / 2 - e.pageY) / 50;
-    bg.style.transform = `translateX(${x}px) translateY(${y}px)`;
-  });
+    // Snowfall
+    function createSnowflake() {
+        if (document.visibilityState !== 'visible') return;
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        const icons = ['•', '❄'];
+        snowflake.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = Math.random() * 3 + 3 + 's'; 
+        snowflake.style.opacity = Math.random() * 0.5;
+        snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+        document.body.appendChild(snowflake);
+        setTimeout(() => snowflake.remove(), 6000);
+    }
+
+    // Mobile par snowfall thoda slow (200ms) aur desktop pe fast (120ms)
+    const snowSpeed = window.innerWidth > 768 ? 120 : 250;
+    setInterval(createSnowflake, snowSpeed);
 </script>
 
 </body>
