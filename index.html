@@ -27,12 +27,12 @@
             overflow-x: hidden;
         }
 
-        /* --- UPDATED GIF BACKGROUND --- */
+        /* --- BACKGROUND & SNOW --- */
         .background { 
             position: fixed; 
             inset: -50px; 
-            background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHR2aHcycGhqaHFsNXZvbDh5bm80cGxkajFpbDdsZHptb3Y1dnR5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fWOBg6QWSPyow/giphy.gif') center/cover; 
-            filter: blur(5px) brightness(0.35); /* Text ko saaf dikhane ke liye brightness kam hai */
+            background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczl2aXZ4Mmd1bWQ2cWlmdWV5bWpjbzM5bjZpcnkyMDkweTU5MGw5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v63B5WpbX0a03HAVRV/giphy.gif') center/cover; 
+            filter: blur(8px) brightness(0.4); 
             z-index: -1; 
             transition: transform 0.2s ease-out; 
             pointer-events: none;
@@ -108,7 +108,7 @@
         .btn-main { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 700; width: 280px; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2); text-align: center; }
         .btn-sec { border: 1px solid var(--border); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 700; width: 280px; background: rgba(255,255,255,0.03); text-align: center; }
 
-        /* --- FEATURES GRID --- */
+        /* --- FEATURES SECTION --- */
         .features { max-width: 1200px; margin: auto; padding: 80px 20px; display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 30px; }
         .card { padding: 40px; border-radius: 18px; background: rgba(13, 17, 23, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); transition:.3s; font-family: 'Poppins', sans-serif; text-align: left; }
         .card:hover { transform: translateY(-8px); box-shadow: 0 10px 40px rgba(0,0,0,0.5); border-color: var(--primary); }
@@ -125,7 +125,7 @@
         .cta span { color:#4aa3ff; }
         .cta p { opacity:.7; max-width:600px; margin:auto; }
 
-        /* --- FOOTER --- */
+        /* --- FOOTER SECTION --- */
         footer { padding:60px 8%; background: #060a18; border-top: 1px solid var(--border); font-family: 'Poppins', sans-serif; }
         .footer-container { max-width:1200px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; }
         .footer-title { font-size:22px; font-weight:600; margin-bottom:15px; }
@@ -239,7 +239,6 @@
 </footer>
 
 <script>
-    // Desktop Parallax
     const bg = document.getElementById('parallax-bg');
     if (window.innerWidth > 768) {
         document.addEventListener('mousemove', (e) => {
@@ -249,7 +248,6 @@
         });
     }
 
-    // Snowfall
     function createSnowflake() {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
